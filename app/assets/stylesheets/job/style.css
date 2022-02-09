@@ -37,7 +37,7 @@ a {
 /* header */
 
 .header {
-  background-color: #BD5724;
+  background-color: #ffffff;
   margin-bottom: 48px;
   padding: 20px 0;
 }
@@ -80,3 +80,4 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
+
