@@ -1,0 +1,29 @@
+/* 体験一覧 */
+.experience-contents{
+  background-color: #061e2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 8vh 0;
+}
+
+.experience-contents>.title {
+  font-size: 5vh;
+  line-height: 2;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.experience-contents>.subtitle {
+  font-size: 2.5vh;
+  margin: 10vh 0;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+/* //体験一覧 */
