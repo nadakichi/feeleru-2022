@@ -38,8 +38,8 @@ a {
 
 .header {
   background-color: #ffffff;
-  margin-bottom: 48px;
-  padding: 20px 0;
+  margin-bottom: 10px;
+  padding: 10px 0;
 }
 .inner {
   width: 1024px;
@@ -55,18 +55,18 @@ a {
 }
 .nav__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
+  padding: 1.6em 2em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #01080c;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #f9fbfc solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #80898f;
 }
 
 .nav__logout{
