@@ -1,29 +1,23 @@
+
 /* 体験一覧 */
 .experience-contents{
-  background-color: #061e2c;
+  background-color: #bfc3c5;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 8vh 0;
+  padding: 20vh 0;
 }
 
 .experience-contents>.title {
+  font-family: Hannotate SC;
   font-size: 5vh;
-  line-height: 2;
+  line-height: 1;
   font-weight: bold;
-  color: white;
+  color: black;
   position: absolute;
   top: 40px;
-  left: 40px;
-}
-
-.experience-contents>.subtitle {
-  font-size: 2.5vh;
-  margin: 10vh 0;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
+  left: 60px;
 }
 
 /* //体験一覧 */
