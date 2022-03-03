@@ -12,8 +12,35 @@
   <%# 体験一覧%>
   <div class='experience-contents'>
     <h2 class='title'>体験一覧</h2>
-    <ul class='experience-list'>
-    
+    <ul class='experience-lists'>
+      <% @businesses.each do |business|%>
+      <li class='list'>
+        <%= link_to business_path(business.id) do %>
+          <div class='business-img-content'>
+            <%= image_tag business.image, class: "business-img" %>
+
+            <%# unless business.order == nil %>
+            <%#div class='sold-out'>
+              <span>Sold Out!!</span>
+            </%div>
+            <%# end %>
+
+          </div>
+          <% end %>
+          <div class='business-info'>
+            <h3 class='business-name'>
+              <%= business.name %>
+            </h3>
+            <div class='business-price'>
+              <span><%= business.price %>円<br><%= business.prefecture.name %></span>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          </div>
+      </li>
+      <%end%>
     </ul>
   </div>
   <%# /体験一覧%>
