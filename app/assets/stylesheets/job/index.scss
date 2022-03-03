@@ -11,7 +11,7 @@
 
 /* 体験一覧 */
 .experience-contents{
-  background-color: #bfc3c5;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,5 +29,25 @@
   top: 40px;
   left: 60px;
 }
+
+.experience-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.experience-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.business-img {
+  width: 33vh;
+  height: 33vh;
+}
+
 
 /* //体験一覧 */
