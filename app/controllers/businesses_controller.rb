@@ -2,7 +2,7 @@ class BusinessesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @businesses = Business.order("created_at DESC")
+    @businesses = Business.order('created_at DESC')
   end
 
   def new
@@ -25,6 +25,7 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:image, :name, :text, :category_id, :prefecture_id, :price, :company).merge(user_id: current_user.id)
+    params.require(:business).permit(:image, :name, :text, :category_id, :prefecture_id, :price,
+                                     :company).merge(user_id: current_user.id)
   end
 end

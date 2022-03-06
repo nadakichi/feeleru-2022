@@ -1,0 +1,76 @@
+<%= render "shared/header" %>
+
+<%# 詳細画面%>
+<div class="business-show">
+  <div class="business-box">
+    <h2 class="company">
+      <%= @business.company%>
+    </h2>
+    <div class="business-img-content">
+      <%= image_tag @business.image ,class:"business-box-img"%>
+    </div>
+    <div class="business-price-box">
+      <span class="business-price">
+        ¥ <%= @business.price %>
+      </span>
+      <span class="business-name">
+        <%= @business.name %>
+      </span>
+    </div>
+
+    <div class="business-explain-box">
+      <span><%= @business.text %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+      <span class="underline-before"></span>
+        <tr>
+          <th class="detail-business">掲載者</th>
+          <td class="detail-value"><%= @business.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-business">カテゴリー</th>
+          <td class="detail-value"><%= @business.category.category %></td>
+        </tr><tr>
+          <th class="detail-business">都道府県</th>
+          <td class="detail-value"><%= @business.prefecture.name %></td>
+        </tr>
+      </span>
+      </tbody>
+      </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"30",height:"30"%>
+        <span>お気に入り</span>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <%if current_user.id == @business.user.id %>
+        <%= link_to "編集", root_path, class: "business-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", root_path, class: "business-destroy" %>
+    <%else%>
+        <%= link_to "体験してみる", root_path, class: "business-red-btn" %>
+      <%end%>
+    <%end%>
+  </div>
+
+  <%# /詳細画面%>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <a href="#" class="another-item"><%= @business.category.category %>をもっと見る</a>
+</div>
+
+<%= render "shared/footer" %>
