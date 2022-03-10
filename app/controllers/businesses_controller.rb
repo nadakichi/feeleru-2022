@@ -39,6 +39,16 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def destroy
+    @business = Business.find(params[:id])
+    if @business.user_id == current_user.id
+      @business.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def business_params
