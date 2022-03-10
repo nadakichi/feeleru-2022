@@ -22,6 +22,23 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
   end
 
+  def edit
+    @business = Business.find(params[:id])
+    if @business.user_id == current_user.id
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @business = Business.find(params[:id])
+    if @business.update(business_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
   private
 
   def business_params
