@@ -48,7 +48,7 @@
       <%if current_user.id == @business.user.id %>
         <%= link_to "編集", edit_business_path, method: :get, class: "business-red-btn" %>
         <p class="or-text">or</p>
-        <%= link_to "削除", root_path, class: "business-destroy" %>
+        <%= link_to "削除", business_path(@business.id), method: :delete, class: "business-destroy" %>
     <%else%>
         <%= link_to "体験してみる", root_path, class: "business-red-btn" %>
       <%end%>
