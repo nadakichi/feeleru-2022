@@ -46,7 +46,7 @@
     </div>
     <% if user_signed_in? %>
       <%if current_user.id == @business.user.id %>
-        <%= link_to "編集", root_path, class: "business-red-btn" %>
+        <%= link_to "編集", edit_business_path, method: :get, class: "business-red-btn" %>
         <p class="or-text">or</p>
         <%= link_to "削除", root_path, class: "business-destroy" %>
     <%else%>
