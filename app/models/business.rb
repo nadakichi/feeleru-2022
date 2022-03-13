@@ -4,7 +4,8 @@ class Business < ApplicationRecord
   belongs_to :prefecture
 
   belongs_to :user
-  has_one :reserve
+  has_one :order
+  has_many :comments
   has_one_attached :image
 
   with_options format: { with: /\A[0-9]+\z/ } do
@@ -12,6 +13,7 @@ class Business < ApplicationRecord
                       presence: { message: "can't be blank" }
   end
 
+  validates :company, presence: true
   validates :name, presence: true
   validates :text, presence: true
   validates :category_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
