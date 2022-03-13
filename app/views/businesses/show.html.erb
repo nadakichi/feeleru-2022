@@ -50,7 +50,7 @@
         <p class="or-text">or</p>
         <%= link_to "削除", business_path(@business.id), method: :delete, class: "business-destroy" %>
     <%else%>
-        <%= link_to "体験してみる", root_path, class: "business-red-btn" %>
+        <%= link_to "体験してみる", business_orders_path(@business), class: "business-red-btn" %>
       <%end%>
     <%end%>
   </div>
