@@ -72,7 +72,7 @@
 
 /* /共通 */
 
-/* 商品画像 */
+/* 体験画像 */
 .img-upload {
   display: flex;
   justify-content: space-between;
@@ -89,9 +89,9 @@
   margin-bottom: 15px;
 }
 
-/* /商品画像 */
+/* /体験画像 */
 
-/* 商品名と商品説明 */
+/* 体験名と体験説明 */
 .new-businesses {
   padding: 2vh 0;
 }
@@ -105,20 +105,20 @@
   resize: none;
 }
 
-.items-explain {
+.businesses-explain {
   margin-top: 2vh;
 }
 
-/* /商品名と商品説明 */
+/* /体験名と体験説明 */
 
-/* 商品の詳細など */
-.items-detail {
+/* 体験の詳細など */
+.businesses-detail {
   display: flex;
   justify-content: space-between;
   padding: 2vh 0;
 }
 
-.items-detail>.form {
+.businesses-detail>.form {
   width: 300px;
   padding: 2vh 0;
 }
@@ -127,7 +127,7 @@
   margin: 2vh 0;
 }
 
-/* /商品の詳細など */
+/* /体験の詳細など */
 
 /* 販売価格 */
 .sell-price {
@@ -201,7 +201,7 @@
 
 /* /下部ボタン */
 
-.items-sell-footer {
+.business-new-footer {
   background-color: #f5f5f5;
   width: 60vw;
   padding: 3ch 0;
@@ -211,7 +211,7 @@
 }
 
 
-.items-sell-footer>.menu {
+.business-new-footer>.menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
