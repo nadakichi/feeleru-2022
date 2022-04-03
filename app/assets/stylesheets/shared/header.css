@@ -59,4 +59,9 @@
 .user-nickname {
   background-color: aquamarine;
 }
+
+.twitter_logo img{
+  width: 40px;
+  height: 40px;
+}
 /* //header */

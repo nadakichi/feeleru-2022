@@ -17,7 +17,7 @@
       <li class='list'>
         <%= link_to business_path(business.id) do %>
           <div class='business-img-content'>
-            <%= image_tag business.image, class: "business-img" %>
+            <%= image_tag business.images[0], class: "business-img" %>
 
           </div>
           <% end %>
