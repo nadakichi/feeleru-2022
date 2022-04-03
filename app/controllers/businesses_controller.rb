@@ -52,7 +52,6 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:image, :name, :text, :category_id, :prefecture_id, :price,
-                                     :company).merge(user_id: current_user.id)
+    params.require(:business).permit(:name, :text, :category_id, :prefecture_id, :price,:company, images: []).merge(user_id: current_user.id)
   end
 end
