@@ -1,5 +1,7 @@
 class BusinessesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :set_business, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_show, only: [:edit, :update]
 
   def index
     @businesses = Business.order('created_at DESC')
@@ -19,11 +21,11 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
+    @comments = @business.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def edit
-    @business = Business.find(params[:id])
     if @business.user_id == current_user.id
     else
       redirect_to root_path
@@ -31,7 +33,6 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    @business = Business.find(params[:id])
     if @business.update(business_params)
       redirect_to action: :show
     else
@@ -40,7 +41,6 @@ class BusinessesController < ApplicationController
   end
 
   def destroy
-    @business = Business.find(params[:id])
     if @business.user_id == current_user.id
       @business.destroy
       redirect_to root_path
@@ -51,7 +51,17 @@ class BusinessesController < ApplicationController
 
   private
 
+  def set_business
+    @business = Business.find(params[:id])
+  end
+
+
   def business_params
     params.require(:business).permit(:name, :text, :category_id, :prefecture_id, :price,:company, images: []).merge(user_id: current_user.id)
   end
+
+  def redirect_to_show
+    return redirect_to root_path if current_user.id != @business.user.id
+  end
+
 end

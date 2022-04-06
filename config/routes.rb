@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   
   resources :businesses do
     resources :orders, only: [:index, :create]
+    resources :comments, only: :create
   end
 end
