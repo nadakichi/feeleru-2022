@@ -3,11 +3,32 @@
 <div class='main'>
 
   <%# 画面上部写真部分%>
-    <div class='title-contents'>
-    
+  <div class='title-contents'>
+  <%= video_tag("/videos/production ID_4957770.mp4", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
+  </div>
+    <div class="wrap">
+    <div class="wrap slide-paused" ontouchstart="">
+      <ul class="slideshow">
+        <li class="content content-hover"><%= link_to image_tag("621763_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("3665067_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("1341441_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("22882887_s.jpg", size: "300x200"), "/" %><br>sample</li>
+      </ul>
+      <ul class="slideshow">
+        <li class="content content-hover"><%= link_to image_tag("621763_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("1341441_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("3665067_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("22882887_s.jpg", size: "300x200"), "/" %><br>sample</li>
+      </ul>
+      <ul class="slideshow">
+        <li class="content content-hover"><%= link_to image_tag("621763_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("1341441_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("3665067_s.jpg", size: "300x200"), "/" %><br>sample</li>
+        <li class="content content-hover"><%= link_to image_tag("22882887_s.jpg", size: "300x200"), "/" %><br>sample</li>
+      </ul>
     </div>
+  </div>
   <%# /画面上部写真部分%>
-  
 
   <%# 体験一覧%>
   <div class='experience-contents'>
