@@ -51,7 +51,7 @@
         <span>お気に入り</span>
       </div>
     </div>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @business.order == nil %>
       <%if current_user.id == @business.user.id %>
         <%= link_to "編集", edit_business_path, method: :get, class: "business-red-btn" %>
         <p class="or-text">or</p>
