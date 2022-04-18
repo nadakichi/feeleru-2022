@@ -1,0 +1,47 @@
+<%= render "shared/header" %>
+<h3>検索ページ</h3>
+<h3><%= link_to 'トップページへ戻る', root_path%></h3>
+<div class='business-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_businesses_path, html: {id: "detailed-search-form"} do |f| %>
+  <div class="search-field">
+      <%= f.label :name, 'お仕事名' %>
+      <br>
+      <%= f.text_field :name, placeholder: 'お仕事名', value: params[:q]&.dig(:name) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :user_nickname_cont, '掲載者名' %>
+      <br>
+      <%= f.text_field :user_nickname_cont, placeholder: '掲載者名' %>
+    </div>
+    <div class="search-field">
+      <%= f.label :prefecture_id_eq, '都道府県' %>
+      <br>
+      <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :category_id_in, 'カテゴリ' %>
+      <br>
+      <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :category, {include_blank: "---"}) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :price_gteq, '価格'%>
+      <br>
+      <%= f.number_field :price_gteq %> 円以上
+      <br>
+      <%= f.number_field :price_lteq %> 円以下
+    </div>
+    <%= f.submit '検索' %>
+  <% end %>
+  <ul class='business-lists' id="detailed-search-result">
+    <% @business.each do |business| %>
+      <li class='list'>
+        <div class="posted-content">
+        <%= link_to business_path(business.id) do %>
+          <%= image_tag business.images[0], class: "business-img" %><br>
+          <%= business.name%>
+        <%end%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
