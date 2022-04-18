@@ -4,13 +4,25 @@
       <div class="nav__left">
       <%= link_to image_tag("logo.png", class: :logo), root_path %>
       </div>
+      <div class='search-bar-contents'>
+        <%= search_form_for Business.ransack(params[:q]), url: search_businesses_path, html: {class: "search-form"} do |f| %>
+          <%= f.text_field :name, placeholder: 'お仕事名から探す', class: 'input-box' %>
+          <br>
+          <%= f.label :submit, class: "search-button" do %>
+            <input type="submit" value="検索" class="send">
+            <%= f.submit :submit, id: "q_submit", style: "display: none;"%>
+          <% end %>
+        <% end %>
+      </div>
+
         <%# ログインしているときは以下を表示する %>
       <% if user_signed_in? %>
         <div class="nav__right">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
           <%= link_to "マイページ", "#", class: :nav__btn %>
           <%= link_to "掲載する", new_business_path, class: :nav__btn %>
-          <%= link_to current_user.nickname, "#", class: "user-nickname"%>
+          <%= link_to '検索する', search_businesses_path%>
+          <%= link_to "#{current_user.nickname}さん", "#", class: "user-nickname"%>
         </div>
         <%# // ログインしているときは上記を表示する %>
       <% else %>
@@ -19,6 +31,7 @@
           <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
           <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
           <%= link_to "掲載する", new_business_path, class: :nav__btn %>
+          <%= link_to '検索する', search_businesses_path%>
         </div>
       <% end %>
       <div class="nav__right">

@@ -49,6 +49,15 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def search
+    if params[:q]&.dig(:name)
+      squished_keywords = params[:q][:name].squish
+      params[:q][:name_cont_any] = squished_keywords.split(" ")
+    end
+    @q = Business.ransack(params[:q])
+    @business = @q.result
+  end
+
   private
 
   def set_business
