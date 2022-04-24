@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :businesses do
     resources :orders, only: [:index, :create]
+    resource :favorites, only: [:create, :destroy]
     resources :comments, only: :create
       collection do
         get 'search'
