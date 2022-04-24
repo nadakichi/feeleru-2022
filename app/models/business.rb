@@ -6,7 +6,11 @@ class Business < ApplicationRecord
   belongs_to :user
   has_one :order
   has_many :comments
+  has_many :favorites, dependent: :destroy
   has_many_attached :images
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
   with_options format: { with: /\A[0-9]+\z/ } do
     validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: "can't be blank" },

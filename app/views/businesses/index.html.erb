@@ -49,8 +49,22 @@
             <div class='business-price'>
               <span>  体験料  <%= business.price %>円<br><%= business.prefecture.name %></span>
               <div class='star-btn'>
+              <% if user_signed_in? %>
+                <% if business.favorited?(current_user) %>
+                  <%= link_to business_favorites_path(id: business.id, business_id: business.id), method: :delete do %>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'><%= business.favorites.count %></span>
+                  <% end %>
+                <% else %>
+                  <%= link_to business_favorites_path(id: business.id, business_id: business.id), method: :post do %>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'><%= business.favorites.count %></span>
+                  <% end %>
+                <% end %>
+              <% else %>
                 <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
+                <span class='star-count'><%= business.favorites.count %></span>
+              <% end %>
               </div>
             </div>
           </div>

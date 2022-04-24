@@ -47,8 +47,22 @@
       </table>
     <div class="option">
       <div class="favorite-btn">
+      <% if user_signed_in?%>
+        <% if @business.favorited?(current_user) %>
+        <%= link_to business_favorites_path(@business.id), method: :delete do %>
+          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"30",height:"30"%>
+          <span>お気に入り<%= @business.favorites.count %></span>
+          <% end %>
+        <% else %>
+        <%= link_to business_favorites_path(@business.id), method: :post do %>
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"30",height:"30"%>
-        <span>お気に入り</span>
+          <span>お気に入り<%= @business.favorites.count %></span>
+          <% end %>
+        <% end %>
+      <% else %>
+      <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"30",height:"30"%>
+      <span>お気に入り<%= @business.favorites.count %></span>
+      <% end %>
       </div>
     </div>
     <% if user_signed_in? && @business.order == nil %>
