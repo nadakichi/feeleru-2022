@@ -3,6 +3,20 @@
 <h2 align="center">Osigoto taiken</h2>
 
 # 概要
+ユーザーを登録すると職場体験を掲載することが出来ます。自身が掲載した職場体験は、編集と
+削除をすることが出来ます。他のユーザーが掲載した職場体験はクレジットカードを用いて決済することが出来ます。
+
+# URL  
+Herokuによるデプロイ  
+  
+https://feeleru-2022.herokuapp.com/  
+  
+Basic認証  
+  
+・　ID:admin  
+・　Pass:2222  
+  
+# テスト用アカウント  
 
 ## Users テーブル
 
