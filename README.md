@@ -1,24 +1,77 @@
-# README
+## Users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|nickname       |string|null:false|
+|email          |string|null:false, unique:true|
+|encrypted_password |string|null:false|
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+has_many :orders  
+has_many :businesses  
+has_many :comments  
+has_many :favorites  
 
-* System dependencies
+## Orders テーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|user   |references|null:false,foreign_key:true|
+|item   |references|null:false,foreign_key:true|
 
-* Database creation
+### Association
+belongs_to :user
+belongs_to :item
+belongs_to :address
 
-* Database initialization
+## Businessesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name            |string|null:false|
+|text            |text  |null:false|
+|price           |integer|null:false|
+|category_id     |integer|null:false|
+|prefecture_id   |integer|null:false|
+|user   |references|null:false,foreign_key:true|
 
-* How to run the test suite
+### Association
+belongs_to :user  
+has_one :order
+has_many :comments  
+has_many :favorites
 
-* Services (job queues, cache servers, search engines, etc.)
+## Addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_code      |string|null:false|
+|city           |string|null:false|
+|address        |string|null:false|
+|building       |string|          |
+|telephone      |string|null:false|
+|prefecture_id  |integer|null:false|
+|order   |references|null:false,foreign_key:true|
 
-* Deployment instructions
+### Association
+belongs_to :order
 
-* ...
+## Commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|null:false|
+|business   |references|null:false,foreign_key:true|
+|user   |references|null:false,foreign_key:true|
+
+### Association
+belongs_to :business
+belongs_to :user
+
+## Favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|business   |references|null:false,foreign_key:true|
+|user   |references|null:false,foreign_key:true|
+
+### Association
+belongs_to :business
+belongs_to :user
