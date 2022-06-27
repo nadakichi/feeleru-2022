@@ -21,7 +21,8 @@
 ## 詳細ページ  
 掲載者は変更・削除ページへ  
 購入者は購入ページへ  
-![demo](https://gyazo.com/e5ef8855559e0b8c7ca7b1270d58a4a3/raw)  
+コメント機能でやりとりができます。
+![demo](https://gyazo.com/c63b42a40536054ec71352422eafd6d1/raw)  
 # URL  
 Herokuによるデプロイ  
   
