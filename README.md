@@ -17,7 +17,11 @@
 ## 検索ページ  
 検索ボタンにて遷移    
 ![demo](https://gyazo.com/84ef9a713b43e9dafcfece1ac2b2f140/raw)  
-
+  
+## 詳細ページ  
+掲載者は変更・削除ページへ  
+購入者は購入ページへ  
+![demo](https://gyazo.com/e5ef8855559e0b8c7ca7b1270d58a4a3/raw)  
 # URL  
 Herokuによるデプロイ  
   
