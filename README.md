@@ -15,6 +15,7 @@
 ![demo](https://gyazo.com/8e8214eaa59b88e6729045d46bfc4c9b/raw)  
   
 ## 検索ページ  
+検索ボタンにて遷移    
 ![demo](https://gyazo.com/84ef9a713b43e9dafcfece1ac2b2f140/raw)  
 
 # URL  
