@@ -23,6 +23,10 @@
 購入者は購入ページへ  
 コメント機能でやりとりができます。
 ![demo](https://gyazo.com/c63b42a40536054ec71352422eafd6d1/raw)  
+  
+## マイページ  
+掲載者の掲載一覧  
+![demo](https://gyazo.com/4c3e1d0c00aa015c7a6c2f9d8b892611/raw)  
 # URL  
 Herokuによるデプロイ  
   
