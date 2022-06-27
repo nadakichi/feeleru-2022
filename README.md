@@ -10,7 +10,7 @@
 ![demo](https://gyazo.com/8b9dba1d9f2dd2e19bda0af4092ce17e/raw)
 　　
 # 機能  
-掲載ページ  
+## 掲載ページ  
 
 ![demo](https://gyazo.com/8e8214eaa59b88e6729045d46bfc4c9b/raw)
 # URL  
