@@ -27,6 +27,9 @@
 ## マイページ  
 掲載者の掲載一覧  
 ![demo](https://gyazo.com/4c3e1d0c00aa015c7a6c2f9d8b892611/raw)  
+  
+## 購入ページ  
+![demo](https://gyazo.com//5266c838bab06b356f8501c3422e04e6/raw)  
 # URL  
 Herokuによるデプロイ  
   
